@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Musical Products Sales </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <header>
+        <center>
+            <h1>Musical Products Sales</h1>
+            <h2>Welcome to the world of Musical</h2>
+            <p>All products in one place with affordable prices</p>
+        </center>
+    </header>
+    <hr>
+    <body>
+        <div>
+            <center>
+            <nav>
+                <a href="#">Home</a> |
+                <a href="#">products</a> |
+                <a href="https://rajmusical.com/Guitars-n-Bass.html">Guitar</a> |
+                <a href="https://rajmusical.com/microphones-n-wireless.html">Mic</a> |
+                <a href="https://rajmusical.com/keyboards-piano.html">Paino</a> |
+                <a href="https://rajmusical.com/havana-m5210-trumpet.html">Trumpet</a> |
+                <a href="#">Cart</a> |
+                <a href="#">Contact us</a>
+            </nav>
+            </center>
+        </div>
+        <h2>Welcome to Musical Products Sales </h2>
+        <p>
+            Welcome to Musical Products Sales. Browse our latest products, watch product videos,<br> Music brings us together. It helps us share feelings. Every song tells a story. You can tell your story, too!
+        <h2>Featured Products</h2>
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>GUITAR</td>
+                <td><img src="guitar.jfif" width="120"></td>
+                <td>₹18,999</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>TRUMPET</td>
+                <td><img src="trumpet.jfif" width="120"></td>
+                <td>₹54,999</td>
+                <td>Available</td>
+            </tr>
+            <tr>
+                <td>MIC</td>
+                <td><img src="Mic.jpg" width="120"></td>
+                <td>₹2,499</td>
+                <td>Available</td>
+            </tr>
+             <tr>
+                <td>Paino</td>
+                <td><img src="Paino.jpg" width="120"></td>
+                <td>₹12,50,500</td>
+                <td>Available</td>
+            </tr>
+        </table>
+        <hr>
+        <div>
+            <h2>Product image</h2>
+            <img src="Musical Instuments.png" width="500" height="400" alt="Musical products" usemap="#workmap">
+            <map name="workmap">
+                <area shape="rect" coords="2487,12,2,6" alt="Laptop" href="https://www.bajaao.com/?srsltid=AfmBOoodE0J5Cy9xKP_hvNTBH5vBskMgiHf70CRr7SqkEvzO3E8QT1f7">
+                
+            </map>
+            <h2>Video player</h2>
+            <video width="650" height="360" controls>
+                <source src="139-135737102_medium.mp4" type="video/mp4">
+            </video>
+            <h2>Audio Controls</h2>
+            <audio controls>
+                <source src="poopol_poopol_bgm.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <h2>Drag Product into Cart</h2>
+
+    <div id="Mic" draggable="true" ondragstart="drag(event)">
+        📱 Instuments
+
+    </div>
+    <br>
+    <div ondrop="drop(event)" ondragover="allowDrop(event)" style="width:250px;height:100px;border:1px solid black;">
+        Shopping Cart
+    </div>
+        <div>
+            <h2>Find Nearby Store</h2>
+            <button onclick="getLocation()">Show My Location</button>
+            <p id="demo"></p>
+            <hr>
+        </div>
+    </body>
+    <h2>Purchase Product</h2>
+    <form><input type="text">Name<br>
+        <input type="email" required>Email<br>
+        <input type="tel">Phone<br>
+        Choose Product<br>
+        <select>
+            <option>Guitar</option>
+            <option>Piano</option>
+            <option>Mic</option>
+            <option>Trumpet</option>
+        </select>
+        <br>Quantity<br>
+        <input type="number" min="1" max="10"><br>Delivery Date<br>
+        <input type="date"><br>Payment Method<br>
+        <input type="radio" name="pay">UPI
+        <input type="radio" name="pay">Card
+        <input type="radio" name="pay">Cash On Delivery<br>
+        Address<br>
+        <textarea rows="5" cols="35"></textarea><br>
+        <input type="submit" value="Buy Now">
+        <input type="reset">
+    </form>
+
+<hr>
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Musical Instruments Sales Pvt Ltd</p>
+        <p>No.45, Kamarajar Salai, Madurai - 625009</p>
+        <p>+91 9489675031</p>
+        <p>044-351500</p>
+        <p>support@MusicProduct.com</p>
+        <p>Customer Care: 1800-123-4567</p>
+        <p>Working Hours:Monday - Saturday 9:00 AM - 7:00 PM</p>
+        <hr>
+        <p align="center">© 2026 Musical Instruments Sales All Rights Reserved.
+        </p>
+    </footer>
+<script>
+    function drop(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+    var x=document.getElementById("demo");
+    function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else{
+        x.innerHTML="Geolocation is not supported.";
+    }}
+    function showPosition(position){
+        x.innerHTML="Latitude : "+position.coords.latitude+
+        "<br>Longitude : "+position.coords.longitude;
+    }
+</script>
+
+</html>
